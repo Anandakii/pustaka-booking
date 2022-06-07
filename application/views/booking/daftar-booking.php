@@ -32,7 +32,7 @@
                                     <?= form_error(); ?>
                                 </td>
                                 <td> 
-                                <input class="form-check-user rounded-sm" style="width:100px" type="text" name="lama" id="lama" value="10">
+                                <input class="form-check-user rounded-sm" style="width:100px" type="text" name="lama" id="lama" value="3">
                                 <?= form_error(); ?>
                                 </td>
                             </form>
@@ -44,7 +44,7 @@
         </td>
     </tr>
     <tr>
-        <input class="form-check-user rounded-sm" style="width:100px" type="text" name="lama" id="lama" value="">
+        <input class="form-check-user rounded-sm" style="width:100px" type="text" name="lama" id="lama" value="3">
     </tr>
 </table>
 </center>

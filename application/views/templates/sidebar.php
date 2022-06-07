@@ -20,7 +20,7 @@
                         <!-- Nav Item - Dashboard -->
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('admin'); ?>">
-                                <i class="fa fa-fw fa book"></i>
+                                <i class="fas fa-tachometer-alt"></i>
                                 <span>Dashboard</span></a>
                         </li>
                     </li>
@@ -42,12 +42,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('buku'); ?>">
-                                <i class="fa fa-fw fa book"></i>
-                                <span>Data Buku</span></a>
+                                <i class="fas fa-address-book"></i>
+                                <span>Data Buku (<?= $this->db->query("select*from buku")->num_rows(); ?> Data)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('user/anggota'); ?>">
-                                <i class="fa fa-fw fa book"></i>
+                                <i class="fas fa-users"></i>
                                 <span>Data Anggota</span></a>
                         </li>
                     </li>
@@ -69,7 +69,7 @@
                 <li class="nav-item">
                     <a class="nav-link pb-0" href="<?= base_url('pinjam/daftarBooking'); ?>">
                         <i class="fas fa-fw fa-list"></i>
-                        <span>Data Booking</span></a>
+                        <span>Data Booking (<?= $this->db->query("select*from booking")->num_rows(); ?> Data)</span></a>
                 </li>
             </li>
 

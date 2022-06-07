@@ -17,8 +17,8 @@ class Admin extends CI_Controller
         $data['anggota'] = $this->ModelUser->getUserLimit()->result_array();
         $data['buku'] = $this->ModelBuku->getLimitBuku()->result_array();
 
-        //menggunakan stok dan dibooking pada tabel buku
-        $detail = $this->db->query("SELECT*FROM booking,booking_detail WHERE DAY(curdate()) < DAY(batas_ambil) AND booking.id_booking=booking_detail.id_booking")->result_array();
+        //mengupdate stok dan dibooking pada tabel buku
+        $detail = $this->db->query("SELECT*FROM booking,booking_detail, buku WHERE booking.id_booking=booking_detail.id_booking and booking_detail.id_buku=buku.id")->result_array();
         foreach ($detail as $key) {
             $id_buku = $key['id_buku'];
             $batas = $key['tgl_booking'];
@@ -47,12 +47,11 @@ class Admin extends CI_Controller
                 }
             }
         }
-                   
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
         $this->load->view('admin/index', $data);
         $this->load->view('templates/footer');
     }
-
 }
